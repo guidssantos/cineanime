@@ -1,10 +1,11 @@
+import { Dispatch } from 'react';
 import * as Styled from './styles';
 
 export type AnimePaginationProps = {
-  limit?: number;
-  total?: number;
-  offset?: number;
-  setOffSet?: Node;
+  limit: number;
+  total: number;
+  offset: number;
+  setOffSet: Dispatch<React.SetStateAction<number>>;
 };
 
 const MAX_ITEMS = 9;
@@ -20,7 +21,7 @@ export const AnimePagination = ({
   const pages = Math.ceil(total / limit);
   const first = Math.max(currentPage - MAX_LEFT, 1);
 
-  function onPageChange(page) {
+  function onPageChange(page: number) {
     setOffSet((page - 1) * limit);
   }
 

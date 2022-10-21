@@ -5,7 +5,7 @@ import { AnimePagination } from '../AnimePagination';
 
 export const CardHome = () => {
   const [anime, setAnime] = useState<any[]>([]);
-  const [info, setInfo] = useState([]);
+  const [info, setInfo] = useState<any>([]);
   const [offset, setOffSet] = useState(0);
 
   useEffect(() => {

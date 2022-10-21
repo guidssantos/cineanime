@@ -2,10 +2,8 @@
 import Navbar from '../../Components/Navbar/Navbar';
 import { SectionContainer } from '../../Components/SectionContainer';
 import * as Styled from './styles';
-import { useEffect, useState } from 'react';
 import { CardHome } from '../../Components/AnimeCard';
 import { AnimeBanner } from '../../Components/AnimeBanner';
-import { AnimePagination } from '../../Components/AnimePagination';
 
 export const AnimeHome = () => {
   return (
