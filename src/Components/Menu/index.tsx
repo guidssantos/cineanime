@@ -1,4 +1,5 @@
 import { FaBars } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import * as Styled from './styles';
 
 export type MenuProps = { toggle?: React.MouseEventHandler<HTMLDivElement> };
@@ -15,10 +16,10 @@ export const Menu = ({ toggle }: MenuProps) => {
       </Styled.MobileIcon>
       <Styled.MenuLinks>
         <Styled.MenuLink>
-          <a>Anime</a>
+          <Link to="/">Anime</Link>
         </Styled.MenuLink>
         <Styled.MenuLink>
-          <a>Movie</a>
+          <Link to="/movies">Movie</Link>
         </Styled.MenuLink>
         <Styled.MenuLink>
           <a>List Movie</a>
