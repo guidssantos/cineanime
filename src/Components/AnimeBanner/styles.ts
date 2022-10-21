@@ -8,7 +8,7 @@ ${({ theme }) => css`
 export const HomeBanner = styled.div`
 display: inline-block;
 position: relative;
-width: 1136px;
+width: 100%;
 height: 388px;
 `;
 

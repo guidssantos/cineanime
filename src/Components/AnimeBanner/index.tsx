@@ -10,7 +10,6 @@ export const AnimeBanner = () => {
       .get(`anime/2`)
       .then((response) => {
         setAnime([response.data.data]);
-        console.log(anime);
       })
       .catch((err) => console.log(err));
   }, []);

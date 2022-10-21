@@ -8,6 +8,15 @@ ${({ theme }) => css`
   li{
     margin-right: 20px;
   }
+
+  @media ${theme.media.lteSmall}{
+    li{
+    margin-right: 0;
+    margin-bottom: 20px;
+    }
+
+    justify-content: space-between;
+  }
 `}
 `;
 export const ButtonPagination = styled.button`

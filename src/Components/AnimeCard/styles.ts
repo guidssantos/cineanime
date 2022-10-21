@@ -1,10 +1,16 @@
 import styled, { css } from 'styled-components';
 export const AnimeWrapper = styled.ul`
+${({ theme }) => css`
+
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 
+  @media ${theme.media.lteSmall}{
+    justify-content: center;
+  }
 
+`}
 `;
 
 export const AnimeOne = styled.li`
@@ -21,12 +27,19 @@ ${({ theme }) => css`
 `;
 
 export const Anime = styled.a`
+${({ theme }) => css`
   display: flex;
   flex-direction: column;
   position: relative;
   width: 170px;
   height: 300px;
   overflow: hidden;
+
+  @media ${theme.media.lteSmall}{
+    width: 220px;
+    height: 320px;
+  }
+  `}
 `;
 
 export const AnimeImg = styled.div`

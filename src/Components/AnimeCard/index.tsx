@@ -21,8 +21,6 @@ export const CardHome = () => {
       .then((response) => {
         setAnime(response.data.data);
         setInfo(response.data);
-
-        console.log(anime);
       })
       .catch((err) => console.log(err));
   }, [offset]);
