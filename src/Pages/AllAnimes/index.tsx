@@ -2,7 +2,6 @@ import Navbar from '../../Components/Navbar/Navbar';
 import { SectionContainer } from '../../Components/SectionContainer';
 import { useEffect, useState } from 'react';
 import * as Styled from './styles';
-import { MoviePagination } from '../../Components/MoviePagination';
 import { Footer } from '../../Components/Footer';
 import { api } from '../../services/api';
 import { AnimePagination } from '../../Components/AnimePagination';

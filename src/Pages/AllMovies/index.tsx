@@ -9,8 +9,8 @@ import { Footer } from '../../Components/Footer';
 import { Link } from 'react-router-dom';
 
 export const AllMovies = () => {
-  const [movie, setMovie] = useState([]);
-  const [info, setInfo] = useState([]);
+  const [movie, setMovie] = useState<any>([]);
+  const [info, setInfo] = useState<any>([]);
   const [page, setPage] = useState(0);
 
   const image_path = 'https://image.tmdb.org/t/p/w500';
