@@ -1,19 +1,14 @@
 import styled, { css } from 'styled-components';
-export const AnimeWrapper = styled.ul`
+export const MovieWrapper = styled.ul`
 ${({ theme }) => css`
 
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-
-  @media ${theme.media.lteSmall}{
-    justify-content: center;
-  }
-
 `}
 `;
 
-export const AnimeOne = styled.li`
+export const Movieone = styled.li`
 ${({ theme }) => css`
   text-align: center;
   margin-bottom: ${theme.spacings.large};
@@ -23,10 +18,15 @@ ${({ theme }) => css`
     transform: rotate(5deg) scale(1.2);
     }
   }
+
+   @media ${theme.media.lteSmall}{
+    margin: 4px;
+  }
+
 `}
 `;
 
-export const Anime = styled.a`
+export const Movie = styled.span`
 ${({ theme }) => css`
   display: flex;
   flex-direction: column;
@@ -36,19 +36,21 @@ ${({ theme }) => css`
   overflow: hidden;
 
   @media ${theme.media.lteSmall}{
-    width: 220px;
-    height: 320px;
+    width: 77px;
+    height: 150px;
   }
   `}
 `;
 
-export const AnimeImg = styled.div`
+export const MovieImg = styled.div`
   border-radius: 12px;
   width: 100%;
   height: 100%;
   filter: brightness(65%);
   transition: ease-in-out all 300ms;
   background-size: cover;
+  background-position: center;
+
 
 
 &:hover{
@@ -56,7 +58,7 @@ export const AnimeImg = styled.div`
 }
 `;
 
-export const AnimeName = styled.h4`
+export const MovieName = styled.h4`
 ${({ theme }) => css`
   padding-top: ${theme.spacings.xsmall};
   font-size: 14px;
@@ -69,5 +71,9 @@ ${({ theme }) => css`
   bottom: 10px;
   left: 10px;
   z-index: 1;
+
+  @media ${theme.media.lteSmall}{
+    font-size: 8px;
+  }
   `}
 `;

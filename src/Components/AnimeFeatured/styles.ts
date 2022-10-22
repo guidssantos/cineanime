@@ -6,10 +6,6 @@ ${({ theme }) => css`
   flex-wrap: wrap;
   justify-content: space-between;
 
-  @media ${theme.media.lteSmall}{
-    justify-content: center;
-  }
-
 `}
 `;
 
@@ -23,6 +19,11 @@ ${({ theme }) => css`
     transform: rotate(5deg) scale(1.2);
     }
   }
+
+  @media ${theme.media.lteSmall}{
+    margin: 4px;
+}
+
 `}
 `;
 
@@ -35,9 +36,9 @@ ${({ theme }) => css`
   height: 300px;
   overflow: hidden;
 
-  @media ${theme.media.lteSmall}{
-    width: 220px;
-    height: 320px;
+   @media ${theme.media.lteSmall}{
+    width: 77px;
+    height: 150px;
   }
   `}
 `;
@@ -49,6 +50,7 @@ export const AnimeImg = styled.div`
   filter: brightness(65%);
   transition: ease-in-out all 300ms;
   background-size: cover;
+  background-position: center;
 
 
 &:hover{
@@ -69,5 +71,10 @@ ${({ theme }) => css`
   bottom: 10px;
   left: 10px;
   z-index: 1;
+
+  @media ${theme.media.lteSmall}{
+    font-size: 8px;
+  }
+
   `}
 `;

@@ -11,16 +11,16 @@ const Sidebar = ({ isOpen, toggle }: Styled.SidebarProps) => {
       <Styled.SidebarWrapper>
         <Styled.SidebarMenu>
           <Styled.SidebarLink onClick={toggle} href="#">
-            Movie
+            <Link to="/">Movie</Link>
           </Styled.SidebarLink>
           <Styled.SidebarLink onClick={toggle} href="#">
-            List Movie
+            <Link to="/allmovies">List Movie</Link>
           </Styled.SidebarLink>
           <Styled.SidebarLink onClick={toggle} href="#">
-            Anime
+            <Link to="/animes">Anime</Link>
           </Styled.SidebarLink>
           <Styled.SidebarLink onClick={toggle} href="#">
-            List Anime
+            <Link to="/allanimes">List Anime</Link>
           </Styled.SidebarLink>
         </Styled.SidebarMenu>
       </Styled.SidebarWrapper>

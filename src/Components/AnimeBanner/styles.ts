@@ -21,6 +21,7 @@ background-size: cover;
 background-position: center;
 filter: brightness(80%);
 transition: ease-in-out all 300ms;
+z-index: 1;
 
 
 &:hover{

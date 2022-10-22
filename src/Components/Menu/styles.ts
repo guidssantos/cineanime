@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-export const Wrapper = styled.nav`
+export const WrapperMenu = styled.nav`
 ${({ theme }) => css`
   display: flex;
   justify-content: space-around;
@@ -17,8 +17,8 @@ ${({ theme }) => css`
 
 export const MenuLinks = styled.ul`
  @media screen and (max-width: 768px){
-            display:none;
-        }
+  display:none;
+  }
 `;
 
 export const MenuLink = styled.li`

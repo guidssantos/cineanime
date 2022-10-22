@@ -6,7 +6,6 @@ ${({ theme }) => css`
   justify-content: center;
   flex-wrap: wrap;
 
-
   li{
     margin-right: 20px;
   }

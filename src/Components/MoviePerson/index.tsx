@@ -3,38 +3,38 @@ import { useEffect, useState } from 'react';
 import { moviekey } from '../../services/moviekey';
 import { movieapi } from '../../services/movieapi';
 
-export const MovieCard = () => {
+export const MoviePerson = () => {
   const [movie, setMovie] = useState([]);
   const image_path = 'https://image.tmdb.org/t/p/w500';
 
   useEffect(() => {
     movieapi
-      .get('movie/popular', {
+      .get('person/popular', {
         params: {
           api_key: moviekey,
         },
       })
       .then((response) => {
-        setMovie(response.data.results);
+        setMovie(response.data.results.slice(1, 13));
         console.log(movie);
       })
       .catch((err) => console.log(err));
   }, []);
 
   return (
-    <Styled.AnimeWrapper>
+    <Styled.MovieWrapper>
       {movie.map((movie) => (
-        <Styled.AnimeOne key={movie.id}>
-          <Styled.Anime>
-            <Styled.AnimeImg
+        <Styled.Movieone key={movie.id}>
+          <Styled.Movie>
+            <Styled.MovieImg
               style={{
-                backgroundImage: `url(${image_path}${movie.poster_path})`,
+                backgroundImage: `url(${image_path}${movie.profile_path})`,
               }}
             />
-            <Styled.AnimeName>{movie.title}</Styled.AnimeName>
-          </Styled.Anime>
-        </Styled.AnimeOne>
+            <Styled.MovieName>{movie.name}</Styled.MovieName>
+          </Styled.Movie>
+        </Styled.Movieone>
       ))}
-    </Styled.AnimeWrapper>
+    </Styled.MovieWrapper>
   );
 };

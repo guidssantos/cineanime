@@ -1,37 +1,34 @@
 import Navbar from '../../Components/Navbar/Navbar';
-import { useEffect, useState } from 'react';
 import * as Styled from './styles';
-import { movieapi } from '../../services/movieapi';
-import { moviekey } from '../../services/moviekey';
-import { MovieCard } from '../../Components/MovieCard';
+import { MovieFeatured } from '../../Components/MovieFeatured';
+import { MovieBanner } from '../../Components/MovieBanner';
+import { SectionContainer } from '../../Components/SectionContainer';
+import { MovieRelease } from '../../MovieRelease';
+import { Link } from 'react-router-dom';
+import { MoviePerson } from '../../Components/MoviePerson';
+import { Footer } from '../../Components/Footer';
 
 export const MovieHome = () => {
-  const [movie, setMovie] = useState([]);
-
-  useEffect(() => {
-    movieapi
-      .get('movie/popular', {
-        params: {
-          api_key: moviekey,
-        },
-      })
-      .then((response) => {
-        setMovie(response.data);
-        console.log(movie);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-
   return (
     <Styled.Wrapper>
-      <Navbar />
-      <Styled.BannerBackground>
+      <MovieBanner />
+      <SectionContainer>
         <article>
-          <MovieCard />
+          <Styled.MovieTitle>
+            <h1>Featured Movie</h1> <Link to="/allmovies">See More {'>'} </Link>
+          </Styled.MovieTitle>
+          <MovieFeatured />
+          <Styled.MovieTitle>
+            <h1>Release Movie</h1> <Link to="/allmovies">See More {'>'} </Link>
+          </Styled.MovieTitle>
+          <MovieRelease />
+          <Styled.MovieTitle>
+            <h1>Featured Casts</h1>
+          </Styled.MovieTitle>
+          <MoviePerson />
         </article>
-      </Styled.BannerBackground>
+      </SectionContainer>
+      <Footer />
     </Styled.Wrapper>
   );
 };

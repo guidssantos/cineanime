@@ -1,12 +1,10 @@
 import * as Styled from './styles';
 import { useEffect, useState } from 'react';
 import { api } from '../../services/api';
-import { AnimePagination } from '../AnimePagination';
+import { Link } from 'react-router-dom';
 
-export const CardHome = () => {
+export const AnimeFeatured = () => {
   const [anime, setAnime] = useState<any[]>([]);
-  const [info, setInfo] = useState<any>([]);
-  const [offset, setOffSet] = useState(0);
 
   useEffect(() => {
     api
@@ -14,21 +12,20 @@ export const CardHome = () => {
         params: {
           page: {
             limit: 12,
-            offset,
+            offset: 409,
           },
         },
       })
       .then((response) => {
         setAnime(response.data.data);
-        setInfo(response.data);
       })
       .catch((err) => console.log(err));
-  }, [offset]);
+  }, []);
 
   return (
-    <>
-      <Styled.AnimeWrapper>
-        {anime.map((anime) => (
+    <Styled.AnimeWrapper>
+      {anime.map((anime) => (
+        <Link to={`/anime/${anime.id}`} key={anime.id}>
           <Styled.AnimeOne key={anime.id}>
             <Styled.Anime>
               <Styled.AnimeImg
@@ -41,16 +38,8 @@ export const CardHome = () => {
               </Styled.AnimeName>
             </Styled.Anime>
           </Styled.AnimeOne>
-        ))}
-      </Styled.AnimeWrapper>
-      {info.meta && (
-        <AnimePagination
-          limit={12}
-          total={info.meta.count}
-          offset={offset}
-          setOffSet={setOffSet}
-        />
-      )}
-    </>
+        </Link>
+      ))}
+    </Styled.AnimeWrapper>
   );
 };

@@ -1,0 +1,41 @@
+import { Dispatch } from 'react';
+import * as Styled from './styles';
+
+export type MoviePaginationProps = {
+  limit: number;
+  total: number;
+  offset: number;
+  setOffSet: Dispatch<React.SetStateAction<number>>;
+};
+
+const MAX_ITEMS = 9;
+const MAX_LEFT = (MAX_ITEMS - 1) / 2;
+
+export const MoviePagination = ({
+  limit,
+  total,
+  offset,
+  setOffSet,
+}: MoviePaginationProps) => {
+  const currentPage = offset ? offset / limit + 1 : 1;
+  const pages = Math.ceil(total / limit);
+  const first = Math.max(currentPage - MAX_LEFT, 1);
+
+  function onPageChange(page: number) {
+    setOffSet((page - 1) * limit);
+  }
+
+  return (
+    <Styled.Wrapper>
+      {Array.from({ length: Math.min(MAX_ITEMS, pages) })
+        .map((_, index) => index + first)
+        .map((page) => (
+          <li key={page}>
+            <Styled.ButtonPagination onClick={() => onPageChange(page)}>
+              {page}
+            </Styled.ButtonPagination>
+          </li>
+        ))}
+    </Styled.Wrapper>
+  );
+};

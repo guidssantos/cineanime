@@ -5,7 +5,7 @@ import * as Styled from './styles';
 export type MenuProps = { toggle?: React.MouseEventHandler<HTMLDivElement> };
 export const Menu = ({ toggle }: MenuProps) => {
   return (
-    <Styled.Wrapper>
+    <Styled.WrapperMenu>
       <Styled.MenuLogo>
         <Styled.Logo>
           <a>CineAnime</a>
@@ -16,19 +16,19 @@ export const Menu = ({ toggle }: MenuProps) => {
       </Styled.MobileIcon>
       <Styled.MenuLinks>
         <Styled.MenuLink>
-          <Link to="/">Anime</Link>
+          <Link to="/animes">Anime</Link>
         </Styled.MenuLink>
         <Styled.MenuLink>
-          <Link to="/movies">Movie</Link>
+          <Link to="/">Movie</Link>
         </Styled.MenuLink>
         <Styled.MenuLink>
-          <a>List Movie</a>
+          <Link to="/allmovies">List Movie</Link>
         </Styled.MenuLink>
         <Styled.MenuLink>
-          <a>List Anime</a>
+          <Link to="/allanimes">List Anime</Link>
         </Styled.MenuLink>
         <Styled.InputSearch type="text" placeholder="Search anime or movie" />
       </Styled.MenuLinks>
-    </Styled.Wrapper>
+    </Styled.WrapperMenu>
   );
 };
