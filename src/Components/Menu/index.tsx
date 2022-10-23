@@ -6,7 +6,7 @@ import * as Styled from './styles';
 
 export type MenuProps = { toggle?: React.MouseEventHandler<HTMLDivElement> };
 export const Menu = ({ toggle }: MenuProps) => {
-  const itemsSize = useSelector((state) => state.items.length);
+  const itemsSize = useSelector((state: any) => state.items.length);
 
   return (
     <Styled.WrapperMenu>
