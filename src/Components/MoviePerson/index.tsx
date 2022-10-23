@@ -16,7 +16,6 @@ export const MoviePerson = () => {
       })
       .then((response) => {
         setMovie(response.data.results.slice(1, 13));
-        console.log(movie);
       })
       .catch((err) => console.log(err));
   }, []);

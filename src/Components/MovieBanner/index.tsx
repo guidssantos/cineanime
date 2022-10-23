@@ -17,7 +17,6 @@ export const MovieBanner = () => {
       })
       .then((response) => {
         setMovie([response.data]);
-        console.log(movie);
       })
       .catch((err) => console.log(err));
   }, []);

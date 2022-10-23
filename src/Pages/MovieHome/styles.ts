@@ -27,6 +27,8 @@ ${({ theme }) => css`
   a{
     font-size: 12px;
   }
+
+  padding-top: 20px;
   }
   `}
 `;

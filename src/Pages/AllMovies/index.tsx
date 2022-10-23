@@ -26,7 +26,6 @@ export const AllMovies = () => {
       .then((response) => {
         setMovie(response.data.results.slice(0, 12));
         setInfo(response.data);
-        console.log(info);
       })
       .catch((err) => console.log(err));
   }, [page]);

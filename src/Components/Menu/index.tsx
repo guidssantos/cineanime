@@ -12,7 +12,7 @@ export const Menu = ({ toggle }: MenuProps) => {
     <Styled.WrapperMenu>
       <Styled.MenuLogo>
         <Styled.Logo>
-          <a>CineAnime</a>
+          <Link to="/">CineAnime</Link>
         </Styled.Logo>
       </Styled.MenuLogo>
       <Styled.MobileIcon onClick={toggle}>

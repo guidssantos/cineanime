@@ -25,7 +25,6 @@ export const AllAnimes = () => {
       .then((response) => {
         setAnime(response.data.data);
         setInfo(response.data);
-        console.log(info);
       })
       .catch((err) => console.log(err));
   }, [offset]);

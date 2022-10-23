@@ -1,8 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import * as Styled from './styles';
+import { AiFillStar } from 'react-icons/ai';
 
 const Sidebar = ({ isOpen, toggle }: Styled.SidebarProps) => {
+  const itemsSize = useSelector((state: any) => state.items.length);
+
   return (
     <Styled.SidebarContainer isOpen={isOpen} onClick={toggle}>
       <Styled.Icon onClick={toggle}>
@@ -21,6 +25,12 @@ const Sidebar = ({ isOpen, toggle }: Styled.SidebarProps) => {
           </Styled.SidebarLink>
           <Styled.SidebarLink onClick={toggle} href="#">
             <Link to="/allanimes">List Anime</Link>
+          </Styled.SidebarLink>
+          <Styled.SidebarLink>
+            <Link to="/favorites">
+              <AiFillStar />
+              {itemsSize}
+            </Link>
           </Styled.SidebarLink>
         </Styled.SidebarMenu>
       </Styled.SidebarWrapper>

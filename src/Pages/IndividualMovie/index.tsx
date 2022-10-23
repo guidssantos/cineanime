@@ -61,11 +61,15 @@ export const IndividualMovie = () => {
                     <span key={movie.id}>{movie.name}</span>
                   ))}
                 </Styled.MovieGenres>
-                <a href={movie.homepage} target="_blank" rel="noreferrer">
-                  <Styled.KnowMore>Know More</Styled.KnowMore>
-                </a>
+                <Styled.ButtonsWrapper>
+                  <Styled.Buttons onClick={() => handleAddItem(movie)}>
+                    Add Favorite
+                  </Styled.Buttons>
+                  <a href={movie.homepage} target="_blank" rel="noreferrer">
+                    <Styled.Buttons>Know More</Styled.Buttons>
+                  </a>
+                </Styled.ButtonsWrapper>
               </Styled.MovieText>
-              <button onClick={() => handleAddItem(movie)}>Add Favorite</button>
             </Styled.MovieWrapper>
           ))}
         </Styled.MovieBackground>

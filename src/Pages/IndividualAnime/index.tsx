@@ -8,6 +8,7 @@ import Navbar from '../../Components/Navbar/Navbar';
 import { SectionContainer } from '../../Components/SectionContainer';
 import { Footer } from '../../Components/Footer';
 import { api } from '../../services/api';
+import { Buttons } from '../IndividualMovie/styles';
 
 export const IndividualAnime = () => {
   const [anime, setAnime] = useState([]);
@@ -58,8 +59,10 @@ export const IndividualAnime = () => {
                 <Styled.AnimeVotes>
                   Average Votes: {anime.attributes.averageRating}
                 </Styled.AnimeVotes>
+                <Buttons onClick={() => handleAddItem(anime)}>
+                  Add Favorite
+                </Buttons>
               </Styled.AnimeText>
-              <button onClick={() => handleAddItem(anime)}>Add Favorite</button>
             </Styled.AnimeWrapper>
           ))}
         </Styled.AnimeBackground>
