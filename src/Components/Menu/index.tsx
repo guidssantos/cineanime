@@ -1,9 +1,13 @@
 import { FaBars } from 'react-icons/fa';
+import { AiFillStar } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import * as Styled from './styles';
 
 export type MenuProps = { toggle?: React.MouseEventHandler<HTMLDivElement> };
 export const Menu = ({ toggle }: MenuProps) => {
+  const itemsSize = useSelector((state) => state.items.length);
+
   return (
     <Styled.WrapperMenu>
       <Styled.MenuLogo>
@@ -27,7 +31,12 @@ export const Menu = ({ toggle }: MenuProps) => {
         <Styled.MenuLink>
           <Link to="/allanimes">List Anime</Link>
         </Styled.MenuLink>
-        <Styled.InputSearch type="text" placeholder="Search anime or movie" />
+        <Styled.MenuLink>
+          <Link to="/favorites">
+            <AiFillStar />
+            {itemsSize}
+          </Link>
+        </Styled.MenuLink>
       </Styled.MenuLinks>
     </Styled.WrapperMenu>
   );

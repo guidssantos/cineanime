@@ -22,7 +22,6 @@ export const Wrapper = styled.div`
 ${({ theme }) => css`
 width: 100%;
 height: 600px;
-
 `}
 `;
 
@@ -31,7 +30,7 @@ ${({ theme }) => css`
 width: 100%;
 height: 100%;
 position: relative;
-background-size: 105%;
+background-size: 110%;
 background-repeat: no-repeat;
 background-attachment: fixed;
 box-shadow: inset 0px 0px 100px 40px rgba(0,0,0,0.75);

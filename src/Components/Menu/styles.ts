@@ -38,22 +38,6 @@ ${({ theme }) => css`
   `}
 `;
 
-export const InputSearch = styled.input`
-${({ theme }) => css`
-  background-color: #374151;
-  padding: 8px ${theme.spacings.large};
-  border-radius: 37px;
-  border: 0;
-  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.55);
-  color: white;
-
-  &:focus-visible{
-    outline: 0;
-  }
-
-`}
-`;
-
 export const MobileIcon = styled.div`
     display:none;
 
