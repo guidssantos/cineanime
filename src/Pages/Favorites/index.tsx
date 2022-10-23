@@ -10,7 +10,7 @@ export const Favorites = () => {
   const dispatch = useDispatch();
   const image_path = 'https://image.tmdb.org/t/p/w500';
 
-  const item = useSelector((state) =>
+  const item = useSelector((state: any) =>
     state.items.map((item) => ({
       ...item,
     })),
