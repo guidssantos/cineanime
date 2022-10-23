@@ -28,7 +28,6 @@ export const IndividualAnime = () => {
 
   function handleAddItem(anime) {
     dispatch(ItemActions.addToFavorite(anime));
-    console.log(handleAddItem(anime));
   }
 
   return (
