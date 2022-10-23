@@ -1,4 +1,3 @@
-import { CSSProperties } from 'react';
 import * as Styled from './styles';
 
 export type SectionContainerProps = {

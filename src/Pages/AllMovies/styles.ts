@@ -5,12 +5,35 @@ export const AllMoviesWrapper = styled.main`
 ${WrapperMenu}{
   background-color: #192026;
 }
+`;
 
-& > h1{
+export const TitleWrapper = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+
+h1{
   text-align: center;
   color: black;
-  padding-top: 4rem;
+  padding-top: 2rem;
 }
+`;
+
+export const InputSearch = styled.input`
+${({ theme }) => css`
+  background-color: #192026;
+  padding: 8px ${theme.spacings.xhuge};
+  border-radius: 5px;
+  border: 0;
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.55);
+  color: white;
+  text-align: center;
+
+  &:focus-visible{
+    outline: 0;
+  }
+
+`}
 `;
 
 export const Wrapper = styled.ul`

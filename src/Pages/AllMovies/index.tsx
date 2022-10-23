@@ -34,7 +34,10 @@ export const AllMovies = () => {
   return (
     <Styled.AllMoviesWrapper>
       <Navbar />
-      <h1>All Movies</h1>
+      <Styled.TitleWrapper>
+        <h1>All Movies</h1>
+        {/* <Styled.InputSearch type="text" placeholder="Search movie" /> */}
+      </Styled.TitleWrapper>
       <SectionContainer>
         <Styled.Wrapper>
           {movie.map((movie) => (

@@ -9,7 +9,7 @@ ${WrapperMenu}{
 & > h1{
   text-align: center;
   color: black;
-  padding-top: 4rem;
+  padding-top: 2rem;
 }
 `;
 

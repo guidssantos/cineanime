@@ -1,8 +1,11 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import * as ItemActions from '../../store/modules/favorite/actions';
 import * as Styled from './styles';
 import { movieapi } from '../../services/movieapi';
 import { moviekey } from '../../services/moviekey';
+
 import Navbar from '../../Components/Navbar/Navbar';
 import { SectionContainer } from '../../Components/SectionContainer';
 import { Footer } from '../../Components/Footer';
@@ -11,6 +14,8 @@ export const IndividualMovie = () => {
   const [movie, setMovie] = useState([]);
   const { id } = useParams();
   const movie_path = 'https://image.tmdb.org/t/p/original';
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     movieapi
@@ -25,6 +30,10 @@ export const IndividualMovie = () => {
       })
       .catch((err) => console.log(err));
   }, []);
+
+  function handleAddItem(movie) {
+    dispatch(ItemActions.addToFavorite(movie));
+  }
 
   return (
     <Styled.Wrapper>
@@ -56,6 +65,7 @@ export const IndividualMovie = () => {
                   <Styled.KnowMore>Know More</Styled.KnowMore>
                 </a>
               </Styled.MovieText>
+              <button onClick={() => handleAddItem(movie)}>Add Favorite</button>
             </Styled.MovieWrapper>
           ))}
         </Styled.MovieBackground>
